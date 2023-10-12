@@ -191,3 +191,150 @@
 [2023-10-12 13:32:08 : INFO] - memory_limit: 256M (used: 75.5M | 8M) 
 [2023-10-12 13:32:08 : INFO] - multisite: N 
 [2023-10-12 13:32:08 : INFO] - openssl: OpenSSL 1.1.1i  8 Dec 2020 
+[2023-10-12 14:22:53 : INFO] - Re_Smush_It_Task server status: Online 
+[2023-10-12 14:22:54 : INFO] - 
+ 
+[2023-10-12 14:22:54 : INFO] - Header for logs at time:  Thu, 12 Oct 2023 14:22:54 +0000 on http://localhost/chicdressing 
+[2023-10-12 14:22:54 : INFO] - WP: 6.3.1 
+[2023-10-12 14:22:54 : INFO] - PHP: 8.0.1 (apache2handler, Windows NT DESKTOP-9PABT94 6.2 build 9200 (Windows 8 Home Premium Edition) AMD64) 
+[2023-10-12 14:22:54 : INFO] - MySQL: 5.7.24 
+[2023-10-12 14:22:54 : INFO] - WPLANG: fr_FR 
+[2023-10-12 14:22:54 : INFO] - Server: Apache/2.4.33 (Win64) OpenSSL/1.0.2u mod_fcgid/2.3.9 PHP/8.0.1 
+[2023-10-12 14:22:54 : INFO] - Outbound connections: N 
+[2023-10-12 14:22:54 : INFO] - Disabled Functions:  
+[2023-10-12 14:22:54 : INFO] - max_execution_time: 60 
+[2023-10-12 14:22:54 : INFO] - memory_limit: 128M (used: 84.6M | 8M) 
+[2023-10-12 14:22:54 : INFO] - multisite: N 
+[2023-10-12 14:22:54 : INFO] - openssl: OpenSSL 1.1.1i  8 Dec 2020 
+[2023-10-12 14:22:54 : INFO] - A total of 1 tasks of type smush found and will be processed in this iteration 
+[2023-10-12 14:22:54 : DEBUG] - Lock option (updraft_lock_smush, wp_options) was created in the database 
+[2023-10-12 14:22:54 : INFO] - Lock (updraft_lock_smush, wp_options) acquired after initialising the database 
+[2023-10-12 14:22:54 : INFO] - Processing task with ID : 14, and type 'smush' 
+[2023-10-12 14:22:54 : INFO] - Task with ID 14 and type (smush) failed with error code exceeded_max_filesize - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2021/07/fashion-2021-09-01-22-37-14-utc.jpg - cannot be optimized, file size is above service provider limit 
+[2023-10-12 14:22:54 : INFO] - Lock option (updraft_lock_smush, wp_options) released 
+[2023-10-12 14:22:54 : INFO] - Successfully processed the queue (smush). 1 tasks were processed out of 1. 
+[2023-10-12 14:22:54 : INFO] - Lock option (updraft_lock_smush, wp_options) was deleted from the database 
+[2023-10-12 14:24:27 : INFO] - Re_Smush_It_Task server status: Online 
+[2023-10-12 14:24:28 : INFO] - Processing task with ID : 28, and type 'smush' 
+[2023-10-12 14:24:28 : INFO] - Processing task with ID : 28, and type 'smush' 
+[2023-10-12 14:24:28 : INFO] - Re_Smush_It_Task - attachment ID : 960, started on : October 12, 2023 02:24:28 
+[2023-10-12 14:24:28 : INFO] - Re_Smush_It_Task - attachment ID : 960, started on : October 12, 2023 02:24:28 
+[2023-10-12 14:24:28 : INFO] - File: yogendra-singh-kOIODZD_ByQ-unsplash.jpg, Compression quality: 60 
+[2023-10-12 14:24:28 : INFO] - File: yogendra-singh-kOIODZD_ByQ-unsplash.jpg, Compression quality: 60 
+[2023-10-12 14:24:37 : INFO] - Backing up the original image - 2020/08/yogendra-singh-kOIODZD_ByQ-unsplash-updraft-pre-smush-original.jpg 
+[2023-10-12 14:24:37 : INFO] - Backing up the original image - 2020/08/yogendra-singh-kOIODZD_ByQ-unsplash-updraft-pre-smush-original.jpg 
+[2023-10-12 14:24:57 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2020/08/yogendra-singh-kOIODZD_ByQ-unsplash.jpg.The file was compressed from 451.13 KB to 261.75 KB, saving 41.98 percent, using WP-Optimize 
+[2023-10-12 14:24:57 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2020/08/yogendra-singh-kOIODZD_ByQ-unsplash.jpg.The file was compressed from 451.13 KB to 261.75 KB, saving 41.98 percent, using WP-Optimize 
+[2023-10-12 14:24:57 : INFO] - Completed processing task with ID : 28, and type 'smush' 
+[2023-10-12 14:24:57 : INFO] - Completed processing task with ID : 28, and type 'smush' 
+[2023-10-12 14:25:58 : INFO] - Re_Smush_It_Task server status: Online 
+[2023-10-12 14:25:59 : INFO] - Processing task with ID : 29, and type 'smush' 
+[2023-10-12 14:25:59 : INFO] - Processing task with ID : 29, and type 'smush' 
+[2023-10-12 14:25:59 : INFO] - Task with ID 29 and type (smush) failed with error code exceeded_max_filesize - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2021/07/fashion-2021-09-01-22-37-14-utc.jpg - cannot be optimized, file size is above service provider limit 
+[2023-10-12 14:25:59 : INFO] - Task with ID 29 and type (smush) failed with error code exceeded_max_filesize - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2021/07/fashion-2021-09-01-22-37-14-utc.jpg - cannot be optimized, file size is above service provider limit 
+[2023-10-12 14:26:16 : INFO] - Re_Smush_It_Task server status: Online 
+[2023-10-12 14:26:17 : INFO] - Processing task with ID : 30, and type 'smush' 
+[2023-10-12 14:26:17 : INFO] - Processing task with ID : 30, and type 'smush' 
+[2023-10-12 14:26:17 : INFO] - Re_Smush_It_Task - attachment ID : 954, started on : October 12, 2023 02:26:17 
+[2023-10-12 14:26:17 : INFO] - Re_Smush_It_Task - attachment ID : 954, started on : October 12, 2023 02:26:17 
+[2023-10-12 14:26:17 : INFO] - File: michael-lee-5Z9bgfRZLLE-unsplash.jpg, Compression quality: 60 
+[2023-10-12 14:26:17 : INFO] - File: michael-lee-5Z9bgfRZLLE-unsplash.jpg, Compression quality: 60 
+[2023-10-12 14:26:28 : INFO] - Backing up the original image - 2020/08/michael-lee-5Z9bgfRZLLE-unsplash-updraft-pre-smush-original.jpg 
+[2023-10-12 14:26:28 : INFO] - Backing up the original image - 2020/08/michael-lee-5Z9bgfRZLLE-unsplash-updraft-pre-smush-original.jpg 
+[2023-10-12 14:26:53 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2020/08/michael-lee-5Z9bgfRZLLE-unsplash.jpg.The file was compressed from 684.22 KB to 385.85 KB, saving 43.61 percent, using WP-Optimize 
+[2023-10-12 14:26:53 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2020/08/michael-lee-5Z9bgfRZLLE-unsplash.jpg.The file was compressed from 684.22 KB to 385.85 KB, saving 43.61 percent, using WP-Optimize 
+[2023-10-12 14:26:53 : INFO] - Completed processing task with ID : 30, and type 'smush' 
+[2023-10-12 14:26:53 : INFO] - Completed processing task with ID : 30, and type 'smush' 
+[2023-10-12 14:27:36 : INFO] - Re_Smush_It_Task server status: Online 
+[2023-10-12 14:27:37 : INFO] - Processing task with ID : 31, and type 'smush' 
+[2023-10-12 14:27:37 : INFO] - Processing task with ID : 31, and type 'smush' 
+[2023-10-12 14:27:37 : INFO] - Re_Smush_It_Task - attachment ID : 953, started on : October 12, 2023 02:27:37 
+[2023-10-12 14:27:37 : INFO] - Re_Smush_It_Task - attachment ID : 953, started on : October 12, 2023 02:27:37 
+[2023-10-12 14:27:37 : INFO] - File: armen-aydinyan-bhJfx7t4QUA-unsplash.jpg, Compression quality: 60 
+[2023-10-12 14:27:37 : INFO] - File: armen-aydinyan-bhJfx7t4QUA-unsplash.jpg, Compression quality: 60 
+[2023-10-12 14:27:51 : INFO] - Backing up the original image - 2020/08/armen-aydinyan-bhJfx7t4QUA-unsplash-updraft-pre-smush-original.jpg 
+[2023-10-12 14:27:51 : INFO] - Backing up the original image - 2020/08/armen-aydinyan-bhJfx7t4QUA-unsplash-updraft-pre-smush-original.jpg 
+[2023-10-12 14:28:17 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2020/08/armen-aydinyan-bhJfx7t4QUA-unsplash.jpg.The file was compressed from 634.07 KB to 343.88 KB, saving 45.77 percent, using WP-Optimize 
+[2023-10-12 14:28:17 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2020/08/armen-aydinyan-bhJfx7t4QUA-unsplash.jpg.The file was compressed from 634.07 KB to 343.88 KB, saving 45.77 percent, using WP-Optimize 
+[2023-10-12 14:28:17 : INFO] - Completed processing task with ID : 31, and type 'smush' 
+[2023-10-12 14:28:17 : INFO] - Completed processing task with ID : 31, and type 'smush' 
+[2023-10-12 14:28:32 : INFO] - Re_Smush_It_Task server status: Online 
+[2023-10-12 14:28:33 : INFO] - Processing task with ID : 32, and type 'smush' 
+[2023-10-12 14:28:33 : INFO] - Processing task with ID : 32, and type 'smush' 
+[2023-10-12 14:28:33 : INFO] - Re_Smush_It_Task - attachment ID : 951, started on : October 12, 2023 02:28:33 
+[2023-10-12 14:28:33 : INFO] - Re_Smush_It_Task - attachment ID : 951, started on : October 12, 2023 02:28:33 
+[2023-10-12 14:28:33 : INFO] - File: ussama-azam-5IcEBmSOQq0-unsplash.jpg, Compression quality: 60 
+[2023-10-12 14:28:33 : INFO] - File: ussama-azam-5IcEBmSOQq0-unsplash.jpg, Compression quality: 60 
+[2023-10-12 14:28:49 : INFO] - Backing up the original image - 2022/05/ussama-azam-5IcEBmSOQq0-unsplash-updraft-pre-smush-original.jpg 
+[2023-10-12 14:28:49 : INFO] - Backing up the original image - 2022/05/ussama-azam-5IcEBmSOQq0-unsplash-updraft-pre-smush-original.jpg 
+[2023-10-12 14:29:12 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2022/05/ussama-azam-5IcEBmSOQq0-unsplash.jpg.The file was compressed from 987.06 KB to 407.92 KB, saving 58.67 percent, using WP-Optimize 
+[2023-10-12 14:29:12 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2022/05/ussama-azam-5IcEBmSOQq0-unsplash.jpg.The file was compressed from 987.06 KB to 407.92 KB, saving 58.67 percent, using WP-Optimize 
+[2023-10-12 14:29:12 : INFO] - Completed processing task with ID : 32, and type 'smush' 
+[2023-10-12 14:29:12 : INFO] - Completed processing task with ID : 32, and type 'smush' 
+[2023-10-12 14:29:32 : INFO] - Re_Smush_It_Task server status: Online 
+[2023-10-12 14:29:33 : INFO] - Processing task with ID : 33, and type 'smush' 
+[2023-10-12 14:29:33 : INFO] - Processing task with ID : 33, and type 'smush' 
+[2023-10-12 14:29:33 : INFO] - Re_Smush_It_Task - attachment ID : 949, started on : October 12, 2023 02:29:33 
+[2023-10-12 14:29:33 : INFO] - Re_Smush_It_Task - attachment ID : 949, started on : October 12, 2023 02:29:33 
+[2023-10-12 14:29:33 : INFO] - File: fall-fashion-2021-09-02-03-12-10-utc.jpg, Compression quality: 60 
+[2023-10-12 14:29:33 : INFO] - File: fall-fashion-2021-09-02-03-12-10-utc.jpg, Compression quality: 60 
+[2023-10-12 14:29:43 : INFO] - Backing up the original image - 2022/05/fall-fashion-2021-09-02-03-12-10-utc-updraft-pre-smush-original.jpg 
+[2023-10-12 14:29:43 : INFO] - Backing up the original image - 2022/05/fall-fashion-2021-09-02-03-12-10-utc-updraft-pre-smush-original.jpg 
+[2023-10-12 14:30:08 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2022/05/fall-fashion-2021-09-02-03-12-10-utc.jpg.The file was compressed from 770.42 KB to 247.21 KB, saving 67.91 percent, using WP-Optimize 
+[2023-10-12 14:30:08 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2022/05/fall-fashion-2021-09-02-03-12-10-utc.jpg.The file was compressed from 770.42 KB to 247.21 KB, saving 67.91 percent, using WP-Optimize 
+[2023-10-12 14:30:08 : INFO] - Completed processing task with ID : 33, and type 'smush' 
+[2023-10-12 14:30:08 : INFO] - Completed processing task with ID : 33, and type 'smush' 
+[2023-10-12 14:35:06 : INFO] - 
+ 
+[2023-10-12 14:35:06 : INFO] - Header for logs at time:  Thu, 12 Oct 2023 14:35:06 +0000 on http://localhost/chicdressing 
+[2023-10-12 14:35:06 : INFO] - WP: 6.3.1 
+[2023-10-12 14:35:06 : INFO] - PHP: 8.0.1 (apache2handler, Windows NT DESKTOP-9PABT94 6.2 build 9200 (Windows 8 Home Premium Edition) AMD64) 
+[2023-10-12 14:35:06 : INFO] - MySQL: 5.7.24 
+[2023-10-12 14:35:06 : INFO] - WPLANG: fr_FR 
+[2023-10-12 14:35:06 : INFO] - Server: Apache/2.4.33 (Win64) OpenSSL/1.0.2u mod_fcgid/2.3.9 PHP/8.0.1 
+[2023-10-12 14:35:06 : INFO] - Outbound connections: N 
+[2023-10-12 14:35:06 : INFO] - Disabled Functions:  
+[2023-10-12 14:35:06 : INFO] - max_execution_time: 60 
+[2023-10-12 14:35:06 : INFO] - memory_limit: 256M (used: 75.4M | 8M) 
+[2023-10-12 14:35:06 : INFO] - multisite: N 
+[2023-10-12 14:35:06 : INFO] - openssl: OpenSSL 1.1.1i  8 Dec 2020 
+[2023-10-12 14:35:06 : INFO] - Cleaning up tasks of type (smush). A total of 5 tasks will be deleted. 
+[2023-10-12 14:36:21 : INFO] - Re_Smush_It_Task server status: Online 
+[2023-10-12 14:36:23 : INFO] - Processing task with ID : 34, and type 'smush' 
+[2023-10-12 14:36:23 : INFO] - Processing task with ID : 34, and type 'smush' 
+[2023-10-12 14:36:23 : INFO] - Re_Smush_It_Task - attachment ID : 958, started on : October 12, 2023 02:36:23 
+[2023-10-12 14:36:23 : INFO] - Re_Smush_It_Task - attachment ID : 958, started on : October 12, 2023 02:36:23 
+[2023-10-12 14:36:23 : INFO] - File: sasha-lebedeva-VwGcsgeM-YM-unsplash.jpg, Compression quality: 60 
+[2023-10-12 14:36:23 : INFO] - File: sasha-lebedeva-VwGcsgeM-YM-unsplash.jpg, Compression quality: 60 
+[2023-10-12 14:36:32 : INFO] - Backing up the original image - 2020/08/sasha-lebedeva-VwGcsgeM-YM-unsplash-updraft-pre-smush-original.jpg 
+[2023-10-12 14:36:32 : INFO] - Backing up the original image - 2020/08/sasha-lebedeva-VwGcsgeM-YM-unsplash-updraft-pre-smush-original.jpg 
+[2023-10-12 14:36:55 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2020/08/sasha-lebedeva-VwGcsgeM-YM-unsplash.jpg.The file was compressed from 631.41 KB to 359.33 KB, saving 43.09 percent, using WP-Optimize 
+[2023-10-12 14:36:55 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2020/08/sasha-lebedeva-VwGcsgeM-YM-unsplash.jpg.The file was compressed from 631.41 KB to 359.33 KB, saving 43.09 percent, using WP-Optimize 
+[2023-10-12 14:36:55 : INFO] - Completed processing task with ID : 34, and type 'smush' 
+[2023-10-12 14:36:55 : INFO] - Completed processing task with ID : 34, and type 'smush' 
+[2023-10-12 14:37:55 : INFO] - Re_Smush_It_Task server status: Online 
+[2023-10-12 14:37:56 : INFO] - Processing task with ID : 35, and type 'smush' 
+[2023-10-12 14:37:56 : INFO] - Processing task with ID : 35, and type 'smush' 
+[2023-10-12 14:37:56 : INFO] - Re_Smush_It_Task - attachment ID : 955, started on : October 12, 2023 02:37:56 
+[2023-10-12 14:37:56 : INFO] - Re_Smush_It_Task - attachment ID : 955, started on : October 12, 2023 02:37:56 
+[2023-10-12 14:37:56 : INFO] - File: michael-lee-Noqjeq2XJUk-unsplash.jpg, Compression quality: 60 
+[2023-10-12 14:37:56 : INFO] - File: michael-lee-Noqjeq2XJUk-unsplash.jpg, Compression quality: 60 
+[2023-10-12 14:38:07 : INFO] - Backing up the original image - 2020/08/michael-lee-Noqjeq2XJUk-unsplash-updraft-pre-smush-original.jpg 
+[2023-10-12 14:38:07 : INFO] - Backing up the original image - 2020/08/michael-lee-Noqjeq2XJUk-unsplash-updraft-pre-smush-original.jpg 
+[2023-10-12 14:38:29 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2020/08/michael-lee-Noqjeq2XJUk-unsplash.jpg.The file was compressed from 537.72 KB to 312.81 KB, saving 41.83 percent, using WP-Optimize 
+[2023-10-12 14:38:29 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2020/08/michael-lee-Noqjeq2XJUk-unsplash.jpg.The file was compressed from 537.72 KB to 312.81 KB, saving 41.83 percent, using WP-Optimize 
+[2023-10-12 14:38:29 : INFO] - Completed processing task with ID : 35, and type 'smush' 
+[2023-10-12 14:38:29 : INFO] - Completed processing task with ID : 35, and type 'smush' 
+[2023-10-12 14:39:23 : INFO] - Re_Smush_It_Task server status: Online 
+[2023-10-12 14:39:24 : INFO] - Processing task with ID : 36, and type 'smush' 
+[2023-10-12 14:39:24 : INFO] - Processing task with ID : 36, and type 'smush' 
+[2023-10-12 14:39:24 : INFO] - Re_Smush_It_Task - attachment ID : 959, started on : October 12, 2023 02:39:24 
+[2023-10-12 14:39:24 : INFO] - Re_Smush_It_Task - attachment ID : 959, started on : October 12, 2023 02:39:24 
+[2023-10-12 14:39:24 : INFO] - File: yogendra-singh-_c56tTiztfA-unsplash.jpg, Compression quality: 60 
+[2023-10-12 14:39:24 : INFO] - File: yogendra-singh-_c56tTiztfA-unsplash.jpg, Compression quality: 60 
+[2023-10-12 14:39:32 : INFO] - Backing up the original image - 2020/08/yogendra-singh-_c56tTiztfA-unsplash-updraft-pre-smush-original.jpg 
+[2023-10-12 14:39:32 : INFO] - Backing up the original image - 2020/08/yogendra-singh-_c56tTiztfA-unsplash-updraft-pre-smush-original.jpg 
+[2023-10-12 14:39:55 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2020/08/yogendra-singh-_c56tTiztfA-unsplash.jpg.The file was compressed from 347.34 KB to 197.35 KB, saving 43.18 percent, using WP-Optimize 
+[2023-10-12 14:39:55 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2020/08/yogendra-singh-_c56tTiztfA-unsplash.jpg.The file was compressed from 347.34 KB to 197.35 KB, saving 43.18 percent, using WP-Optimize 
+[2023-10-12 14:39:55 : INFO] - Completed processing task with ID : 36, and type 'smush' 
+[2023-10-12 14:39:55 : INFO] - Completed processing task with ID : 36, and type 'smush' 
