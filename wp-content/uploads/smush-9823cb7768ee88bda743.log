@@ -1,0 +1,193 @@
+[2023-10-12 13:22:04 : INFO] - Re_Smush_It_Task server status: Online 
+[2023-10-12 13:22:06 : INFO] - 
+ 
+[2023-10-12 13:22:06 : INFO] - Header for logs at time:  Thu, 12 Oct 2023 13:22:06 +0000 on http://localhost/chicdressing 
+[2023-10-12 13:22:06 : INFO] - WP: 6.3.1 
+[2023-10-12 13:22:06 : INFO] - PHP: 8.0.1 (apache2handler, Windows NT DESKTOP-9PABT94 6.2 build 9200 (Windows 8 Home Premium Edition) AMD64) 
+[2023-10-12 13:22:06 : INFO] - MySQL: 5.7.24 
+[2023-10-12 13:22:06 : INFO] - WPLANG: fr_FR 
+[2023-10-12 13:22:06 : INFO] - Server: Apache/2.4.33 (Win64) OpenSSL/1.0.2u mod_fcgid/2.3.9 PHP/8.0.1 
+[2023-10-12 13:22:06 : INFO] - Outbound connections: N 
+[2023-10-12 13:22:06 : INFO] - Disabled Functions:  
+[2023-10-12 13:22:06 : INFO] - max_execution_time: 60 
+[2023-10-12 13:22:06 : INFO] - memory_limit: 128M (used: 84M | 8M) 
+[2023-10-12 13:22:06 : INFO] - multisite: N 
+[2023-10-12 13:22:06 : INFO] - openssl: OpenSSL 1.1.1i  8 Dec 2020 
+[2023-10-12 13:22:06 : INFO] - A total of 12 tasks of type smush found and will be processed in this iteration 
+[2023-10-12 13:22:06 : DEBUG] - Lock option (updraft_lock_smush, wp_options) was created in the database 
+[2023-10-12 13:22:06 : INFO] - Lock (updraft_lock_smush, wp_options) acquired after initialising the database 
+[2023-10-12 13:22:06 : INFO] - Processing task with ID : 1, and type 'smush' 
+[2023-10-12 13:22:06 : INFO] - Re_Smush_It_Task - Attachment ID : 175, Started on : October 12, 2023 01:22:06 
+[2023-10-12 13:22:06 : INFO] - File: cropped-image_03.jpg, Compression quality: 92 
+[2023-10-12 13:22:07 : INFO] - Backing up the original image - 2020/08/cropped-image_03-updraft-pre-smush-original.jpg 
+[2023-10-12 13:22:09 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2020/08/cropped-image_03.jpg.The file was compressed from 38.91 KB to 38.91 KB, saving 0 percent, using WP-Optimize 
+[2023-10-12 13:22:09 : INFO] - Completed processing task with ID : 1, and type 'smush' 
+[2023-10-12 13:22:09 : INFO] - Processing task with ID : 2, and type 'smush' 
+[2023-10-12 13:22:09 : INFO] - Re_Smush_It_Task - Attachment ID : 176, Started on : October 12, 2023 01:22:06 
+[2023-10-12 13:22:09 : INFO] - File: cropped-image_42.jpg, Compression quality: 92 
+[2023-10-12 13:22:10 : INFO] - Backing up the original image - 2020/08/cropped-image_42-updraft-pre-smush-original.jpg 
+[2023-10-12 13:22:13 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2020/08/cropped-image_42.jpg.The file was compressed from 40.55 KB to 40.39 KB, saving 0.38 percent, using WP-Optimize 
+[2023-10-12 13:22:13 : INFO] - Completed processing task with ID : 2, and type 'smush' 
+[2023-10-12 13:22:13 : INFO] - Processing task with ID : 3, and type 'smush' 
+[2023-10-12 13:22:13 : INFO] - Re_Smush_It_Task - Attachment ID : 834, Started on : October 12, 2023 01:22:06 
+[2023-10-12 13:22:13 : INFO] - File: sample-image-8.png, Compression quality: 92 
+[2023-10-12 13:22:13 : INFO] - Backing up the original image - 2020/10/sample-image-8-updraft-pre-smush-original.png 
+[2023-10-12 13:22:16 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2020/10/sample-image-8.png.The file was compressed from 94.43 KB to 94.41 KB, saving 0.02 percent, using WP-Optimize 
+[2023-10-12 13:22:16 : INFO] - Completed processing task with ID : 3, and type 'smush' 
+[2023-10-12 13:22:16 : INFO] - Processing task with ID : 4, and type 'smush' 
+[2023-10-12 13:22:16 : INFO] - Re_Smush_It_Task - Attachment ID : 856, Started on : October 12, 2023 01:22:06 
+[2023-10-12 13:22:16 : INFO] - File: sample-image-31.png, Compression quality: 92 
+[2023-10-12 13:22:16 : INFO] - Backing up the original image - 2020/10/sample-image-31-updraft-pre-smush-original.png 
+[2023-10-12 13:22:18 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2020/10/sample-image-31.png.The file was compressed from 910 bytes to 910 bytes, saving 0 percent, using WP-Optimize 
+[2023-10-12 13:22:18 : INFO] - Completed processing task with ID : 4, and type 'smush' 
+[2023-10-12 13:22:18 : INFO] - Processing task with ID : 5, and type 'smush' 
+[2023-10-12 13:22:19 : INFO] - Re_Smush_It_Task - Attachment ID : 922, Started on : October 12, 2023 01:22:06 
+[2023-10-12 13:22:19 : INFO] - File: cropped-fashion-2021-09-01-22-37-14-utc.jpg, Compression quality: 92 
+[2023-10-12 13:22:21 : INFO] - Backing up the original image - 2021/07/cropped-fashion-2021-09-01-22-37-14-utc-updraft-pre-smush-original.jpg 
+[2023-10-12 13:22:31 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2021/07/cropped-fashion-2021-09-01-22-37-14-utc.jpg.The file was compressed from 191.49 KB to 191.49 KB, saving 0 percent, using WP-Optimize 
+[2023-10-12 13:22:32 : INFO] - Completed processing task with ID : 5, and type 'smush' 
+[2023-10-12 13:22:32 : INFO] - Processing task with ID : 6, and type 'smush' 
+[2023-10-12 13:22:32 : INFO] - Re_Smush_It_Task - Attachment ID : 933, Started on : October 12, 2023 01:22:06 
+[2023-10-12 13:22:32 : INFO] - File: woocommerce-placeholder.png, Compression quality: 92 
+[2023-10-12 13:22:32 : INFO] - Backing up the original image - woocommerce-placeholder-updraft-pre-smush-original.png 
+[2023-10-12 13:22:40 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/woocommerce-placeholder.png.The file was compressed from 73.05 KB to 73.04 KB, saving 0.02 percent, using WP-Optimize 
+[2023-10-12 13:22:40 : INFO] - Completed processing task with ID : 6, and type 'smush' 
+[2023-10-12 13:22:40 : INFO] - Processing task with ID : 7, and type 'smush' 
+[2023-10-12 13:22:40 : INFO] - Re_Smush_It_Task - Attachment ID : 955, Started on : October 12, 2023 01:22:06 
+[2023-10-12 13:22:40 : INFO] - File: michael-lee-Noqjeq2XJUk-unsplash.jpg, Compression quality: 92 
+[2023-10-12 13:22:52 : INFO] - Backing up the original image - 2020/08/michael-lee-Noqjeq2XJUk-unsplash-updraft-pre-smush-original.jpg 
+[2023-10-12 13:23:06 : INFO] - 
+ 
+[2023-10-12 13:23:06 : INFO] - Header for logs at time:  Thu, 12 Oct 2023 13:23:06 +0000 on http://localhost/chicdressing 
+[2023-10-12 13:23:06 : INFO] - WP: 6.3.1 
+[2023-10-12 13:23:06 : INFO] - PHP: 8.0.1 (apache2handler, Windows NT DESKTOP-9PABT94 6.2 build 9200 (Windows 8 Home Premium Edition) AMD64) 
+[2023-10-12 13:23:06 : INFO] - MySQL: 5.7.24 
+[2023-10-12 13:23:06 : INFO] - WPLANG: fr_FR 
+[2023-10-12 13:23:06 : INFO] - Server: Apache/2.4.33 (Win64) OpenSSL/1.0.2u mod_fcgid/2.3.9 PHP/8.0.1 
+[2023-10-12 13:23:06 : INFO] - Outbound connections: N 
+[2023-10-12 13:23:06 : INFO] - Disabled Functions:  
+[2023-10-12 13:23:06 : INFO] - max_execution_time: 60 
+[2023-10-12 13:23:06 : INFO] - memory_limit: 128M (used: 84M | 8M) 
+[2023-10-12 13:23:06 : INFO] - multisite: N 
+[2023-10-12 13:23:06 : INFO] - openssl: OpenSSL 1.1.1i  8 Dec 2020 
+[2023-10-12 13:23:06 : INFO] - A total of 6 tasks of type smush found and will be processed in this iteration 
+[2023-10-12 13:23:06 : DEBUG] - Lock option (updraft_lock_smush, wp_options) already existed in the database 
+[2023-10-12 13:23:06 : INFO] - Lock (updraft_lock_smush, wp_options) could not be acquired (it is locked) 
+[2023-10-12 13:23:06 : INFO] - Failed to gain semaphore lock (smush) - another process is already processing the queue - aborting (if this is wrong - i.e. if the other process crashed without removing the lock, then another can be started after 1 minute 
+[2023-10-12 13:23:06 : INFO] - Cleaning up tasks of type (smush). A total of 6 tasks will be deleted. 
+[2023-10-12 13:23:15 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2020/08/michael-lee-Noqjeq2XJUk-unsplash.jpg.The file was compressed from 537.72 KB to 537.72 KB, saving 0 percent, using WP-Optimize 
+[2023-10-12 13:23:15 : INFO] - Completed processing task with ID : 7, and type 'smush' 
+[2023-10-12 13:23:15 : INFO] - Processing task with ID : 8, and type 'smush' 
+[2023-10-12 13:23:15 : INFO] - Re_Smush_It_Task - Attachment ID : 956, Started on : October 12, 2023 01:22:06 
+[2023-10-12 13:23:15 : INFO] - File: raden-prasetya-CQDkSdPOzYY-unsplash.jpg, Compression quality: 92 
+[2023-10-12 13:23:24 : INFO] - Backing up the original image - 2020/08/raden-prasetya-CQDkSdPOzYY-unsplash-updraft-pre-smush-original.jpg 
+[2023-10-12 13:23:42 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2020/08/raden-prasetya-CQDkSdPOzYY-unsplash.jpg.The file was compressed from 269.03 KB to 269.03 KB, saving 0 percent, using WP-Optimize 
+[2023-10-12 13:23:42 : INFO] - Completed processing task with ID : 8, and type 'smush' 
+[2023-10-12 13:23:42 : INFO] - Processing task with ID : 9, and type 'smush' 
+[2023-10-12 13:23:42 : INFO] - Re_Smush_It_Task - Attachment ID : 957, Started on : October 12, 2023 01:22:06 
+[2023-10-12 13:23:42 : INFO] - File: rudy-issa-7DUSkuGgLyM-unsplash.jpg, Compression quality: 92 
+[2023-10-12 13:23:51 : INFO] - Backing up the original image - 2020/08/rudy-issa-7DUSkuGgLyM-unsplash-updraft-pre-smush-original.jpg 
+[2023-10-12 13:24:06 : INFO] - 
+ 
+[2023-10-12 13:24:06 : INFO] - Header for logs at time:  Thu, 12 Oct 2023 13:24:06 +0000 on http://localhost/chicdressing 
+[2023-10-12 13:24:06 : INFO] - WP: 6.3.1 
+[2023-10-12 13:24:06 : INFO] - PHP: 8.0.1 (apache2handler, Windows NT DESKTOP-9PABT94 6.2 build 9200 (Windows 8 Home Premium Edition) AMD64) 
+[2023-10-12 13:24:06 : INFO] - MySQL: 5.7.24 
+[2023-10-12 13:24:06 : INFO] - WPLANG: fr_FR 
+[2023-10-12 13:24:06 : INFO] - Server: Apache/2.4.33 (Win64) OpenSSL/1.0.2u mod_fcgid/2.3.9 PHP/8.0.1 
+[2023-10-12 13:24:06 : INFO] - Outbound connections: N 
+[2023-10-12 13:24:06 : INFO] - Disabled Functions:  
+[2023-10-12 13:24:06 : INFO] - max_execution_time: 60 
+[2023-10-12 13:24:06 : INFO] - memory_limit: 128M (used: 84M | 8M) 
+[2023-10-12 13:24:06 : INFO] - multisite: N 
+[2023-10-12 13:24:06 : INFO] - openssl: OpenSSL 1.1.1i  8 Dec 2020 
+[2023-10-12 13:24:06 : INFO] - A total of 4 tasks of type smush found and will be processed in this iteration 
+[2023-10-12 13:24:06 : DEBUG] - Lock option (updraft_lock_smush, wp_options) already existed in the database 
+[2023-10-12 13:24:06 : INFO] - Lock (updraft_lock_smush, wp_options) could not be acquired (it is locked) 
+[2023-10-12 13:24:06 : INFO] - Failed to gain semaphore lock (smush) - another process is already processing the queue - aborting (if this is wrong - i.e. if the other process crashed without removing the lock, then another can be started after 1 minute 
+[2023-10-12 13:24:06 : INFO] - Cleaning up tasks of type (smush). A total of 2 tasks will be deleted. 
+[2023-10-12 13:24:11 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2020/08/rudy-issa-7DUSkuGgLyM-unsplash.jpg.The file was compressed from 318.72 KB to 318.72 KB, saving 0 percent, using WP-Optimize 
+[2023-10-12 13:24:11 : INFO] - Completed processing task with ID : 9, and type 'smush' 
+[2023-10-12 13:24:11 : INFO] - Processing task with ID : 10, and type 'smush' 
+[2023-10-12 13:24:11 : INFO] - Re_Smush_It_Task - Attachment ID : 958, Started on : October 12, 2023 01:22:06 
+[2023-10-12 13:24:11 : INFO] - File: sasha-lebedeva-VwGcsgeM-YM-unsplash.jpg, Compression quality: 92 
+[2023-10-12 13:24:23 : INFO] - Backing up the original image - 2020/08/sasha-lebedeva-VwGcsgeM-YM-unsplash-updraft-pre-smush-original.jpg 
+[2023-10-12 13:24:49 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2020/08/sasha-lebedeva-VwGcsgeM-YM-unsplash.jpg.The file was compressed from 631.41 KB to 631.41 KB, saving 0 percent, using WP-Optimize 
+[2023-10-12 13:24:49 : INFO] - Completed processing task with ID : 10, and type 'smush' 
+[2023-10-12 13:24:49 : INFO] - Processing task with ID : 11, and type 'smush' 
+[2023-10-12 13:24:49 : INFO] - Re_Smush_It_Task - Attachment ID : 959, Started on : October 12, 2023 01:22:06 
+[2023-10-12 13:24:49 : INFO] - File: yogendra-singh-_c56tTiztfA-unsplash.jpg, Compression quality: 92 
+[2023-10-12 13:24:58 : INFO] - Backing up the original image - 2020/08/yogendra-singh-_c56tTiztfA-unsplash-updraft-pre-smush-original.jpg 
+[2023-10-12 13:25:06 : INFO] - 
+ 
+[2023-10-12 13:25:06 : INFO] - Header for logs at time:  Thu, 12 Oct 2023 13:25:06 +0000 on http://localhost/chicdressing 
+[2023-10-12 13:25:06 : INFO] - WP: 6.3.1 
+[2023-10-12 13:25:06 : INFO] - PHP: 8.0.1 (apache2handler, Windows NT DESKTOP-9PABT94 6.2 build 9200 (Windows 8 Home Premium Edition) AMD64) 
+[2023-10-12 13:25:06 : INFO] - MySQL: 5.7.24 
+[2023-10-12 13:25:06 : INFO] - WPLANG: fr_FR 
+[2023-10-12 13:25:06 : INFO] - Server: Apache/2.4.33 (Win64) OpenSSL/1.0.2u mod_fcgid/2.3.9 PHP/8.0.1 
+[2023-10-12 13:25:06 : INFO] - Outbound connections: N 
+[2023-10-12 13:25:06 : INFO] - Disabled Functions:  
+[2023-10-12 13:25:06 : INFO] - max_execution_time: 60 
+[2023-10-12 13:25:06 : INFO] - memory_limit: 128M (used: 83.9M | 8M) 
+[2023-10-12 13:25:06 : INFO] - multisite: N 
+[2023-10-12 13:25:06 : INFO] - openssl: OpenSSL 1.1.1i  8 Dec 2020 
+[2023-10-12 13:25:06 : INFO] - A total of 2 tasks of type smush found and will be processed in this iteration 
+[2023-10-12 13:25:06 : DEBUG] - Lock option (updraft_lock_smush, wp_options) already existed in the database 
+[2023-10-12 13:25:06 : INFO] - Lock (updraft_lock_smush, wp_options) could not be acquired (it is locked) 
+[2023-10-12 13:25:06 : INFO] - Failed to gain semaphore lock (smush) - another process is already processing the queue - aborting (if this is wrong - i.e. if the other process crashed without removing the lock, then another can be started after 1 minute 
+[2023-10-12 13:25:06 : INFO] - Cleaning up tasks of type (smush). A total of 2 tasks will be deleted. 
+[2023-10-12 13:25:17 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2020/08/yogendra-singh-_c56tTiztfA-unsplash.jpg.The file was compressed from 347.34 KB to 347.34 KB, saving 0 percent, using WP-Optimize 
+[2023-10-12 13:25:17 : INFO] - Completed processing task with ID : 11, and type 'smush' 
+[2023-10-12 13:25:17 : INFO] - Processing task with ID : 12, and type 'smush' 
+[2023-10-12 13:25:17 : INFO] - Re_Smush_It_Task - Attachment ID : 1001, Started on : October 12, 2023 01:22:06 
+[2023-10-12 13:25:17 : INFO] - File: fashion-2021-09-01-22-37-14-utc.jpg, Compression quality: 92 
+[2023-10-12 13:25:20 : INFO] - Backing up the original image - 2023/10/fashion-2021-09-01-22-37-14-utc-updraft-pre-smush-original.jpg 
+[2023-10-12 13:25:32 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2023/10/fashion-2021-09-01-22-37-14-utc.jpg.The file was compressed from 347.25 KB to 345.37 KB, saving 0.54 percent, using WP-Optimize 
+[2023-10-12 13:25:32 : INFO] - Completed processing task with ID : 12, and type 'smush' 
+[2023-10-12 13:25:32 : INFO] - Lock option (updraft_lock_smush, wp_options) released 
+[2023-10-12 13:25:32 : INFO] - Successfully processed the queue (smush). 12 tasks were processed out of 12. 
+[2023-10-12 13:25:32 : INFO] - Lock option (updraft_lock_smush, wp_options) was deleted from the database 
+[2023-10-12 13:25:32 : INFO] - Cleaning up tasks of type (smush). A total of 2 tasks will be deleted. 
+[2023-10-12 13:29:30 : INFO] - Re_Smush_It_Task server status: Online 
+[2023-10-12 13:29:31 : INFO] - 
+ 
+[2023-10-12 13:29:31 : INFO] - Header for logs at time:  Thu, 12 Oct 2023 13:29:31 +0000 on http://localhost/chicdressing 
+[2023-10-12 13:29:31 : INFO] - WP: 6.3.1 
+[2023-10-12 13:29:31 : INFO] - PHP: 8.0.1 (apache2handler, Windows NT DESKTOP-9PABT94 6.2 build 9200 (Windows 8 Home Premium Edition) AMD64) 
+[2023-10-12 13:29:31 : INFO] - MySQL: 5.7.24 
+[2023-10-12 13:29:31 : INFO] - WPLANG: fr_FR 
+[2023-10-12 13:29:31 : INFO] - Server: Apache/2.4.33 (Win64) OpenSSL/1.0.2u mod_fcgid/2.3.9 PHP/8.0.1 
+[2023-10-12 13:29:31 : INFO] - Outbound connections: N 
+[2023-10-12 13:29:31 : INFO] - Disabled Functions:  
+[2023-10-12 13:29:31 : INFO] - max_execution_time: 60 
+[2023-10-12 13:29:31 : INFO] - memory_limit: 128M (used: 83.9M | 8M) 
+[2023-10-12 13:29:31 : INFO] - multisite: N 
+[2023-10-12 13:29:31 : INFO] - openssl: OpenSSL 1.1.1i  8 Dec 2020 
+[2023-10-12 13:29:31 : INFO] - A total of 1 tasks of type smush found and will be processed in this iteration 
+[2023-10-12 13:29:31 : DEBUG] - Lock option (updraft_lock_smush, wp_options) was created in the database 
+[2023-10-12 13:29:31 : INFO] - Lock (updraft_lock_smush, wp_options) acquired after initialising the database 
+[2023-10-12 13:29:31 : INFO] - Processing task with ID : 13, and type 'smush' 
+[2023-10-12 13:29:31 : INFO] - Re_Smush_It_Task - Attachment ID : 940, Started on : October 12, 2023 01:29:31 
+[2023-10-12 13:29:31 : INFO] - File: fashion-2021-09-01-22-38-14-utc.jpg, Compression quality: 92 
+[2023-10-12 13:29:56 : INFO] - Backing up the original image - 2022/04/fashion-2021-09-01-22-38-14-utc-updraft-pre-smush-original.jpg 
+[2023-10-12 13:30:21 : INFO] - Successfully optimized the image - C:\MAMP\htdocs\ChicDressing/wp-content/uploads/2022/04/fashion-2021-09-01-22-38-14-utc.jpg.The file was compressed from 1.56 MB to 1.56 MB, saving 0 percent, using WP-Optimize 
+[2023-10-12 13:30:21 : INFO] - Completed processing task with ID : 13, and type 'smush' 
+[2023-10-12 13:30:21 : INFO] - Lock option (updraft_lock_smush, wp_options) released 
+[2023-10-12 13:30:21 : INFO] - Successfully processed the queue (smush). 1 tasks were processed out of 1. 
+[2023-10-12 13:30:21 : INFO] - Lock option (updraft_lock_smush, wp_options) was deleted from the database 
+[2023-10-12 13:30:21 : INFO] - Cleaning up tasks of type (smush). A total of 1 tasks will be deleted. 
+[2023-10-12 13:32:08 : INFO] - 
+ 
+[2023-10-12 13:32:08 : INFO] - Header for logs at time:  Thu, 12 Oct 2023 13:32:08 +0000 on http://localhost/chicdressing 
+[2023-10-12 13:32:08 : INFO] - WP: 6.3.1 
+[2023-10-12 13:32:08 : INFO] - PHP: 8.0.1 (apache2handler, Windows NT DESKTOP-9PABT94 6.2 build 9200 (Windows 8 Home Premium Edition) AMD64) 
+[2023-10-12 13:32:08 : INFO] - MySQL: 5.7.24 
+[2023-10-12 13:32:08 : INFO] - WPLANG: fr_FR 
+[2023-10-12 13:32:08 : INFO] - Server: Apache/2.4.33 (Win64) OpenSSL/1.0.2u mod_fcgid/2.3.9 PHP/8.0.1 
+[2023-10-12 13:32:08 : INFO] - Outbound connections: N 
+[2023-10-12 13:32:08 : INFO] - Disabled Functions:  
+[2023-10-12 13:32:08 : INFO] - max_execution_time: 60 
+[2023-10-12 13:32:08 : INFO] - memory_limit: 256M (used: 75.5M | 8M) 
+[2023-10-12 13:32:08 : INFO] - multisite: N 
+[2023-10-12 13:32:08 : INFO] - openssl: OpenSSL 1.1.1i  8 Dec 2020 

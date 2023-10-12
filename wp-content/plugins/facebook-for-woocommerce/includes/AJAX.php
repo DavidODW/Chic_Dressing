@@ -9,10 +9,13 @@
  * @package FacebookCommerce
  */
 
-namespace SkyVerge\WooCommerce\Facebook;
+namespace WooCommerce\Facebook;
 
-use SkyVerge\WooCommerce\Facebook\Admin\Settings_Screens\Product_Sync;
-use SkyVerge\WooCommerce\PluginFramework\v5_10_0 as Framework;
+use WooCommerce\Facebook\Framework\Helper;
+use WooCommerce\Facebook\AdvertiseASC\NewBuyers;
+use WooCommerce\Facebook\AdvertiseASC\Retargeting;
+use WooCommerce\Facebook\Admin\Settings_Screens\Product_Sync;
+use WooCommerce\Facebook\Framework\Plugin\Exception as PluginException;
 
 defined( 'ABSPATH' ) or exit;
 
@@ -23,16 +26,8 @@ defined( 'ABSPATH' ) or exit;
  */
 class AJAX {
 
-
 	/** @var string the product attribute search AJAX action */
 	const ACTION_SEARCH_PRODUCT_ATTRIBUTES = 'wc_facebook_search_product_attributes';
-
-	/** @var string facebook order cancel AJAX action */
-	const ACTION_CANCEL_ORDER = 'wc_facebook_cancel_order';
-
-	/** @var string the complete order AJAX action */
-	const ACTION_COMPLETE_ORDER = 'wc_facebook_complete_order';
-
 
 	/**
 	 * AJAX handler constructor.
@@ -54,59 +49,18 @@ class AJAX {
 		// get the current sync status
 		add_action( 'wp_ajax_wc_facebook_get_sync_status', array( $this, 'get_sync_status' ) );
 
+		// get the ad preview
+		add_action( 'wp_ajax_wc_facebook_get_ad_preview', array( $this, 'get_ad_preview' ) );
+
+		add_action( 'wp_ajax_wc_facebook_generate_ad_preview', array( $this, 'generate_ad_preview' ) );
+
+		add_action( 'wp_ajax_wc_facebook_update_ad_status', array( $this, 'update_ad_status' ) );
+
+		// sync the ad/campaign changes with the marketing api.
+		add_action ( 'wp_ajax_wc_facebook_advertise_asc_publish_changes', array( $this, 'publish_ad_changes' ));
+
 		// search a product's attributes for the given term
 		add_action( 'wp_ajax_' . self::ACTION_SEARCH_PRODUCT_ATTRIBUTES, array( $this, 'admin_search_product_attributes' ) );
-
-		// complete a Facebook order for the given order ID
-		add_action( 'wp_ajax_' . self::ACTION_COMPLETE_ORDER, array( $this, 'admin_complete_order' ) );
-
-		// cancel facebook order by the given order ID
-		add_action( 'wp_ajax_' . self::ACTION_CANCEL_ORDER, array( $this, 'admin_cancel_order' ) );
-	}
-
-
-	/**
-	 * Cancels a Facebook order by the given order ID.
-	 *
-	 * @internal
-	 *
-	 * @since 2.1.0
-	 */
-	public function admin_cancel_order() {
-
-		$order = null;
-
-		try {
-
-			if ( ! wp_verify_nonce( Framework\SV_WC_Helper::get_posted_value( 'security' ), self::ACTION_CANCEL_ORDER ) ) {
-				throw new Framework\SV_WC_Plugin_Exception( __( 'Invalid nonce.', 'facebook-for-woocommerce' ) );
-			}
-
-			$order_id    = Framework\SV_WC_Helper::get_posted_value( 'order_id' );
-			$reason_code = Framework\SV_WC_Helper::get_posted_value( 'reason_code' );
-
-			if ( empty( $order_id ) ) {
-				throw new Framework\SV_WC_Plugin_Exception( __( 'Order ID is required.', 'facebook-for-woocommerce' ) );
-			}
-
-			if ( empty( $reason_code ) ) {
-				throw new Framework\SV_WC_Plugin_Exception( __( 'Cancel reason is required.', 'facebook-for-woocommerce' ) );
-			}
-
-			$order = wc_get_order( absint( $order_id ) );
-
-			if ( false === $order ) {
-				throw new Framework\SV_WC_Plugin_Exception( __( 'A valid Order ID is required.', 'facebook-for-woocommerce' ) );
-			}
-
-			facebook_for_woocommerce()->get_commerce_handler()->get_orders_handler()->cancel_order( $order, $reason_code );
-
-			wp_send_json_success();
-
-		} catch ( Framework\SV_WC_Plugin_Exception $exception ) {
-
-			wp_send_json_error( $exception->getMessage() );
-		}
 	}
 
 
@@ -121,20 +75,20 @@ class AJAX {
 
 		try {
 
-			if ( ! wp_verify_nonce( Framework\SV_WC_Helper::get_requested_value( 'security' ), self::ACTION_SEARCH_PRODUCT_ATTRIBUTES ) ) {
-				throw new Framework\SV_WC_Plugin_Exception( 'Invalid nonce' );
+			if ( ! wp_verify_nonce( Helper::get_requested_value( 'security' ), self::ACTION_SEARCH_PRODUCT_ATTRIBUTES ) ) {
+				throw new PluginException( 'Invalid nonce' );
 			}
 
-			$term = Framework\SV_WC_Helper::get_requested_value( 'term' );
+			$term = Helper::get_requested_value( 'term' );
 
 			if ( ! $term ) {
-				throw new Framework\SV_WC_Plugin_Exception( 'A search term is required' );
+				throw new PluginException( 'A search term is required' );
 			}
 
-			$product = wc_get_product( (int) Framework\SV_WC_Helper::get_requested_value( 'request_data' ) );
+			$product = wc_get_product( (int) Helper::get_requested_value( 'request_data' ) );
 
 			if ( ! $product instanceof \WC_Product ) {
-				throw new Framework\SV_WC_Plugin_Exception( 'A valid product ID is required' );
+				throw new PluginException( 'A valid product ID is required' );
 			}
 
 			$attributes = Admin\Products::get_available_product_attribute_names( $product );
@@ -152,7 +106,7 @@ class AJAX {
 
 			wp_send_json( $results );
 
-		} catch ( Framework\SV_WC_Plugin_Exception $exception ) {
+		} catch ( PluginException $exception ) {
 
 			die();
 		}
@@ -160,50 +114,125 @@ class AJAX {
 
 
 	/**
-	 * Completes a Facebook order for the given order ID.
+	 * Syncs the changes with the Marketing Api for different ASC campaigns.
 	 *
-	 * @internal
+	 * Retrieves the changeset for each campaign type and posts them to the backend.
+	 * Makes sure that there is something to be sent.
 	 *
-	 * @since 2.1.0
+	 * @since 3.1.0
+	 *
+	 * @return string
 	 */
-	public function admin_complete_order() {
+	public function publish_ad_changes() {
+
+		$data = json_decode(file_get_contents('php://input'), true);
+		$campaign_type = $data[ 'campaignType' ] ;
+		$ad_message = $data[ 'adMessage' ] ;
+		$daily_budget = $data[ 'dailyBudget' ] ;
+		$country = $data[ 'countryList' ];
+		$is_update = $data[ 'isUpdate' ] == "true";
+		$status = $data['status'];
+		
+		try {
+
+			if ( $is_update ) {
+				$result = facebook_for_woocommerce()->get_advertise_asc_handler( $campaign_type )->update_asc_campaign( array('daily_budget' => $daily_budget, 'ad_message' => $ad_message, 'country' => $country, 'state' => $status) );
+			} else {
+				$result = facebook_for_woocommerce()->get_advertise_asc_handler( $campaign_type )->create_asc_campaign( array('daily_budget' => $daily_budget, 'ad_message' => $ad_message, 'country' => $country, 'state' => $status) );
+		    }
+			wp_send_json_success( $result );
+
+		}
+		catch ( PluginException $e ) {
+
+			wp_send_json_error( $e->getMessage() );
+
+		}
+	}
+
+	public function update_ad_status() {
+		$data = json_decode(file_get_contents('php://input'), true);
+		$campaign_type = $data[ 'campaignType' ] ;
+		$status = $data['status'];
 
 		try {
 
-			if ( ! wp_verify_nonce( Framework\SV_WC_Helper::get_posted_value( 'nonce' ), self::ACTION_COMPLETE_ORDER ) ) {
-				throw new Framework\SV_WC_Plugin_Exception( 'Invalid nonce', 403 );
-			}
+			$result = facebook_for_woocommerce()->get_advertise_asc_handler( $campaign_type )->update_ad_status( $status );
+			wp_send_json_success( $result );
 
-			$order_id        = (int) Framework\SV_WC_Helper::get_posted_value( 'order_id' );
-			$tracking_number = wc_clean( Framework\SV_WC_Helper::get_posted_value( 'tracking_number' ) );
-			$carrier_code    = wc_clean( Framework\SV_WC_Helper::get_posted_value( 'carrier_code' ) );
-
-			if ( empty( $order_id ) ) {
-				throw new Framework\SV_WC_Plugin_Exception( __( 'Order ID is required', 'facebook-for-woocommerce' ) );
-			}
-
-			if ( empty( $tracking_number ) ) {
-				throw new Framework\SV_WC_Plugin_Exception( __( 'Tracking number is required', 'facebook-for-woocommerce' ) );
-			}
-
-			if ( empty( $carrier_code ) ) {
-				throw new Framework\SV_WC_Plugin_Exception( __( 'Carrier code is required', 'facebook-for-woocommerce' ) );
-			}
-
-			$order = wc_get_order( $order_id );
-
-			if ( ! $order instanceof \WC_Order ) {
-				throw new Framework\SV_WC_Plugin_Exception( __( 'Order not found', 'facebook-for-woocommerce' ) );
-			}
-
-			facebook_for_woocommerce()->get_commerce_handler()->get_orders_handler()->fulfill_order( $order, $tracking_number, $carrier_code );
-
-			wp_send_json_success();
-
-		} catch ( Framework\SV_WC_Plugin_Exception $exception ) {
-
-			wp_send_json_error( $exception->getMessage(), $exception->getCode() );
 		}
+		catch ( PluginException $e ) {
+
+			wp_send_json_error( $e->getMessage() );
+
+		}
+	}
+
+	/**
+	 * Gets the Ad Preview for a given ad in different formats and merges the results.
+	 *
+	 * @since 3.1.0
+	 *
+	 * @return string
+	 */
+	public function get_ad_preview() {
+
+		$view = isset( $_GET[ 'view' ] ) ? $_GET[ 'view' ] : null;
+		if ( ! $view ) {
+			wp_send_json_error( " No view is selected. " );
+		}
+
+		$result = $this->get_previews_and_merge( $view );
+
+		wp_send_json_success( $result );
+	}
+
+
+	public function generate_ad_preview() {
+		$view = $_GET[ 'view' ];
+		$message = $_GET[ 'message' ];
+		if ( ! $view ) {
+			wp_send_json_error( " No view is selected. " );
+		}
+		$result = array();
+
+		$result[] = facebook_for_woocommerce()->get_advertise_asc_handler( $view )->generate_ad_preview($message, 'MOBILE_FEED_STANDARD');
+		$result[] = facebook_for_woocommerce()->get_advertise_asc_handler( $view )->generate_ad_preview($message, 'INSTAGRAM_STANDARD');
+		$result[] = facebook_for_woocommerce()->get_advertise_asc_handler( $view )->generate_ad_preview($message, 'INSTAGRAM_STORY');
+
+		wp_send_json_success( $result );
+	}
+
+	/**
+	 * Gets the Ad Preview for an ASC Campaign in different formats and merges the results.
+	 *
+	 * @since 3.1.0
+	 *
+	 * @param string $asc_campaign ASC Campaign type.
+	 * @return string
+	 */
+	private function get_previews_and_merge ( $asc_campaign ){
+		$previews = array();
+
+		$previews[] = $this->retrieve_ad_preview( $asc_campaign, 'MOBILE_FEED_STANDARD' );
+		$previews[] = $this->retrieve_ad_preview( $asc_campaign, 'INSTAGRAM_STANDARD' );
+		$previews[] = $this->retrieve_ad_preview( $asc_campaign, 'INSTAGRAM_STORY' );
+
+		return $previews;
+	}
+
+
+	/**
+	 * Gets the Ad Preview for an ASC Campaign in a specific format.
+	 *
+	 * @since 3.1.0
+	 *
+	 * @param string $asc_campaign ASC Campaign type.
+	 * @param string $ad_format Ad Preview Format.
+	 * @return string
+	 */
+	private function retrieve_ad_preview( $asc_campaign, $ad_format ){
+		return facebook_for_woocommerce()->get_advertise_asc_handler( $asc_campaign )->get_ad_preview( $ad_format );
 	}
 
 
@@ -276,15 +305,15 @@ class AJAX {
 		check_ajax_referer( 'set-product-sync-prompt', 'security' );
 
 		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
-		$product_id = isset( $_POST['product'] ) ? (int) $_POST['product'] : 0;
+		$product_id = isset( $_POST['product'] ) ? (int) wc_clean( wp_unslash( $_POST['product'] ) ) : 0;
 		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
-		$sync_enabled = isset( $_POST['sync_enabled'] ) ? (string) $_POST['sync_enabled'] : '';
+		$sync_enabled = isset( $_POST['sync_enabled'] ) ? (string) wc_clean( wp_unslash( $_POST['sync_enabled'] ) ) : '';
 		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
-		$var_sync_enabled = isset( $_POST['var_sync_enabled'] ) ? (string) $_POST['var_sync_enabled'] : '';
+		$var_sync_enabled = isset( $_POST['var_sync_enabled'] ) ? (string) wc_clean( wp_unslash( $_POST['var_sync_enabled'] ) ) : '';
 	    // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-		$product_cats = isset( $_POST['categories'] ) ? (array) $_POST['categories'] : array();
+		$product_cats = isset( $_POST['categories'] ) ? (array) wc_clean( wp_unslash( $_POST['categories'] ) ) : array();
 		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
-		$product_tags = isset( $_POST['tags'] ) ? (array) $_POST['tags'] : array();
+		$product_tags = isset( $_POST['tags'] ) ? (array) wc_clean( wp_unslash( $_POST['tags'] ) ) : array();
 
 		if ( $product_id > 0 && in_array( $var_sync_enabled, array( 'enabled', 'disabled' ), true ) && in_array( $sync_enabled, array( 'enabled', 'disabled' ), true ) ) {
 
@@ -298,13 +327,13 @@ class AJAX {
 
 					if ( $integration = facebook_for_woocommerce()->get_integration() ) {
 
-						// try with categories first, since we have already IDs
+						// Try with categories first, since we have already IDs.
 						$has_excluded_terms = ! empty( $product_cats ) && array_intersect( $product_cats, $integration->get_excluded_product_category_ids() );
 
-						// the form post can send an array with empty items, so filter them out
-						$product_tags = array_filter( $product_tags );
+						// The form post can send an array with empty items, so filter them out.
+						$product_tags = array_filter( $product_tags, 'strlen' );
 
-						// try next with tags, but WordPress only gives us tag names
+						// Try next with tags, but WordPress only gives us tag names.
 						if ( ! $has_excluded_terms && ! empty( $product_tags ) ) {
 
 							$product_tag_ids = array();
@@ -381,9 +410,9 @@ class AJAX {
 		check_ajax_referer( 'set-product-sync-bulk-action-prompt', 'security' );
 
 		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
-		$product_ids = isset( $_POST['products'] ) ? (array) $_POST['products'] : array();
+		$product_ids = isset( $_POST['products'] ) ? (array) wc_clean( wp_unslash( $_POST['products'] ) ) : array();
 		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
-		$toggle = isset( $_POST['toggle'] ) ? (string) $_POST['toggle'] : '';
+		$toggle = isset( $_POST['toggle'] ) ? (string) wc_clean( wp_unslash( $_POST['toggle'] ) ) : '';
 
 		if ( ! empty( $product_ids ) && ! empty( $toggle ) && 'facebook_include' === $toggle ) {
 
@@ -443,9 +472,9 @@ class AJAX {
 		check_ajax_referer( 'set-excluded-terms-prompt', 'security' );
 
 		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-		$posted_categories = isset( $_POST['categories'] ) ? wp_unslash( $_POST['categories'] ) : array();
+		$posted_categories = isset( $_POST['categories'] ) ? wc_clean( wp_unslash( $_POST['categories'] ) ) : array();
 		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-		$posted_tags = isset( $_POST['tags'] ) ? wp_unslash( $_POST['tags'] ) : array();
+		$posted_tags = isset( $_POST['tags'] ) ? wc_clean( wp_unslash( $_POST['tags'] ) ) : array();
 
 		$new_category_ids = array();
 		$new_tag_ids      = array();
